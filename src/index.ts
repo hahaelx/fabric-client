@@ -2,7 +2,6 @@
 import FabricClient from "./FabricClient"
 
 (async () => {
-  console.log('start')
   const fabricClient = new FabricClient()
   await fabricClient.connectNetwork()
 
@@ -10,10 +9,10 @@ import FabricClient from "./FabricClient"
   const queryResult = await fabricClient.queryChaincode('GetUser', ['1'])
   console.log(queryResult)
   // console.log('invokeChaincode: ')
-  // const invokeResult = await fabricClient.invokeChaincode('CreateUser', ['5', 'EvanLee', 'evan3@g.com'])
+  // const invokeResult = await fabricClient.invokeChaincode('CreateUser', ['10', 'EvanLee', 'evan2@g.com'])
   // console.log(invokeResult)
 
-  // const queryResult2 = await fabricClient.queryChaincode('GetUser', ['4'])
+  // const queryResult2 = await fabricClient.queryChaincode('GetUser', ['5'])
   // console.log(queryResult2)
 
   // const queryResult3 = await fabricClient.queryChaincode('GetAllUsers', [])

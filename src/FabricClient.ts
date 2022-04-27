@@ -80,10 +80,8 @@ export default class FabricClient {
   async invokeChaincode(
     transaction: string,
     args: string[],
-    transient: TransientMap = {}
   ) {
     try {
-      console.log('invokeChaincode')
       const invokeResult = await this.contract.submitTransaction(
         transaction,
         ...args
@@ -92,10 +90,10 @@ export default class FabricClient {
       if (invokeResult) {
         result = invokeResult.toString()
       }
-      return JSON.parse(result)
+      return result
     } catch (error) {
       console.error(
-        `Failed to invoke transaction: "${transaction}" with arguments: "${args}", transient: "${transient}",  error: "${error}"`
+        `Failed to invoke transaction: "${transaction}" with arguments: "${args}", error: "${error}"`
       )
     }
   }
